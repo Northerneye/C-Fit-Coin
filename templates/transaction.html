@@ -1,0 +1,31 @@
+<html>
+<head><title>test</title></head>
+<body>
+  <button onclick="location.href = '{{ url_for('indexstuff') }}';">Home</button>
+  <form action="{{ url_for('new_transaction') }}" method="POST" name="myForm">
+      <p>My coin {{ mycoin }}</p>
+
+      <p><label for="recipient">recipient:</label>
+      <input type="text" name="recipient" id="recipient"></p>
+
+      <p><label for="amount">amount:</label>
+      <input type="text" name="amount" id="amount"></p>
+
+      <input value="Submit" type="submit" onclick="submitform()">
+  </form>
+  <script src="jquery-3.1.0.js"></script>
+  <script type="text/javascript">
+    function submitform(){
+      var formData = JSON.stringify($("#myForm").serializeArray());
+      $.ajax({
+        type: "POST",
+        url: "{{ url_for('new_transaction') }}",
+        data: formData,
+        success: function(){},
+        dataType: "json",
+        contentType : "application/json"
+      });
+    }
+  </script>
+</body>
+</html>

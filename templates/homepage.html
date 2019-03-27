@@ -1,0 +1,12 @@
+<html>
+    <head>
+        <title>Blockchain Government</title>
+    </head>
+    <body>
+        <h1>Blockchain Government</h1>
+        <button onclick="location.href = '{{ url_for('mine') }}';">Mine</button>
+        <button onclick="location.href = '{{ url_for('new_transaction') }}';">Make a Transaction</button>
+        <button onclick="location.href = '{{ url_for('new_bill') }}';">Make a Law</button>
+        <h1>MyCoin: {{ mycoin }}</h1>
+    </body>
+</html>

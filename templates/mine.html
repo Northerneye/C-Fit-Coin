@@ -1,0 +1,11 @@
+<html>
+<head><title>test</title></head>
+<body>
+  <button onclick="location.href = '{{ url_for('indexstuff') }}';">Home</button>
+  <h5>index: {{ response['index'] }}</h5>
+  <h5>transactions: {{ response['transactions'] }}</h5>
+  <h5>laws: {{ response['laws'] }}</h5>
+  <h5>proof: {{ response['proof'] }}</h5>
+  <h5>previous hash:{{ response['previous_hash'] }}</h5>
+</body>
+</html>
